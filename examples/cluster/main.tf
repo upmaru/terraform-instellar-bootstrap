@@ -10,4 +10,9 @@ module "cluster" {
   provider_name   = "aws"
   region          = "ap-southeast-1"
   password_token  = "sometoken"
+
+  uplink_channel      = "develop"
+  # below value is optional if it's passed in uplink pro will be setup
+  # if empty uplink lite will be used.
+  uplink_database_url = "postgresql://user:pass@localhost/some_db"
 }
