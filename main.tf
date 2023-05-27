@@ -10,3 +10,9 @@ resource "instellar_cluster" "main" {
   endpoint       = "${var.cluster_address}:${var.cluster_port}"
   password_token = var.password_token
 }
+
+resource "instellar_uplink" "main" {
+  channel_slug = var.uplink_channel
+  cluster_id   = instellar_cluster.main.id
+  database_url = var.uplink_database_url
+}
