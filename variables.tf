@@ -51,3 +51,21 @@ variable "region" {
   type        = string
   description = "Region of your cluster"
 }
+
+variable "bootstrap_node" {
+  description = "The bootstrap node detail"
+  type = object({
+    slug = string
+    public_ip = string
+  })
+}
+
+variable "nodes" {
+  description = "Other nodes detail"
+  type = list(
+    object({
+      slug = string
+      public_ip = string
+    })
+  )
+}
