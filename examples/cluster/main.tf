@@ -31,4 +31,22 @@ module "instellar" {
       public_ip = "55.66.77.88"
     }
   ]
+
+  services = [
+    { 
+      name = "service-1", 
+      driver = "database/postgresql", 
+      driver_version = "15.2",
+      cluster_ids = [
+        "1"
+      ],
+      credential = {
+        username = "postgres",
+        password = "postgres",
+        database = "postgres",
+        host = "localhost",
+        port = 5432
+      } 
+    },
+  ]
 }

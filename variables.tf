@@ -69,3 +69,23 @@ variable "nodes" {
     })
   )
 }
+
+variable "services" {
+  description = "Services to add to your cluster"
+  type = list(
+    object({
+      slug = string
+      driver = string
+      driver_version = string
+      cluster_ids = list(string)
+      channels = list(string)
+      credential = object({
+        username = string
+        password = string
+        database = string
+        host = string
+        port = number
+      })
+    })
+  )
+}

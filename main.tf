@@ -33,3 +33,17 @@ resource "instellar_node" "nodes" {
   cluster_id = instellar_cluster.this.id
   public_ip = each.value.public_ip
 }
+
+resource "instellar_component" "services" {
+  for_each = {
+    for index, service in var.services:
+      service.slug => service
+  }
+
+  name = each.value.slug
+  driver = each.value.driver
+  driver_version = each.value.driver_version
+  cluster_ids = each.value.cluster_ids
+  channels = each.value.channels
+  credential = each.value.credential
+}
