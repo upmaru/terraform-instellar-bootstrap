@@ -5,7 +5,17 @@ provider "instellar" {
   auth_token = var.instellar_auth_token
 }
 
-module "instellar_bootstrap" {
+module "storage" {
+  source = "../../modules/storage"
+
+  host       = "s3.amazonaws.com"
+  bucket     = "instellar-staging"
+  region     = "ap-southeast-1"
+  access_key = "somekey"
+  secret_key = "somesecret"
+}
+
+module "compute" {
   source = "../.."
 
   cluster_name    = "pizza"
@@ -18,6 +28,8 @@ module "instellar_bootstrap" {
   # below value is optional if it's passed in uplink pro will be setup
   # if empty uplink lite will be used.
   uplink_database_url = "postgresql://user:pass@localhost/some_db"
+
+  depends_on = [module.storage]
 
   bootstrap_node = {
     slug      = "something"
@@ -43,7 +55,7 @@ module "postgresql_service" {
   provider_name  = "aws"
   driver         = "database/postgresql"
   driver_version = "15"
-  cluster_ids    = [module.instellar_bootstrap.cluster_id]
+  cluster_ids    = [module.compute.cluster_id]
   channels       = ["develop", "master"]
 
   credential = {
@@ -62,7 +74,7 @@ module "mysql_service" {
   provider_name  = "aws"
   driver         = "database/mysql"
   driver_version = "5.7"
-  cluster_ids    = [module.instellar_bootstrap.cluster_id]
+  cluster_ids    = [module.compute.cluster_id]
   channels       = ["develop", "master"]
 
   credential = {
