@@ -7,13 +7,13 @@ Terraform module for bootstrapping cluster on instellar.app
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | 0.3.0 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.5 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.3.0 |
+| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.3.2 |
 
 ## Modules
 
@@ -23,22 +23,20 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [instellar_cluster.this](https://registry.terraform.io/providers/upmaru/instellar/0.3.0/docs/resources/cluster) | resource |
-| [instellar_node.bootstrap](https://registry.terraform.io/providers/upmaru/instellar/0.3.0/docs/resources/node) | resource |
-| [instellar_node.nodes](https://registry.terraform.io/providers/upmaru/instellar/0.3.0/docs/resources/node) | resource |
-| [instellar_uplink.this](https://registry.terraform.io/providers/upmaru/instellar/0.3.0/docs/resources/uplink) | resource |
+| [instellar_cluster.this](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/cluster) | resource |
+| [instellar_node.bootstrap](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/node) | resource |
+| [instellar_node.nodes](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/node) | resource |
+| [instellar_uplink.this](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/uplink) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_auth_token"></a> [auth\_token](#input\_auth\_token) | Authentication token for instellar | `string` | n/a | yes |
-| <a name="input_bootstrap_node"></a> [bootstrap\_node](#input\_bootstrap\_node) | The bootstrap node detail | <pre>object({<br>    slug = string<br>    public_ip = string<br>  })</pre> | n/a | yes |
+| <a name="input_bootstrap_node"></a> [bootstrap\_node](#input\_bootstrap\_node) | The bootstrap node detail | <pre>object({<br>    slug      = string<br>    public_ip = string<br>  })</pre> | n/a | yes |
 | <a name="input_cluster_address"></a> [cluster\_address](#input\_cluster\_address) | Public facing IP of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_port"></a> [cluster\_port](#input\_cluster\_port) | Port of the cluster | `number` | `8443` | no |
-| <a name="input_host"></a> [host](#input\_host) | Instellar host | `string` | `"https://web.instellar.app"` | no |
-| <a name="input_nodes"></a> [nodes](#input\_nodes) | Other nodes detail | <pre>list(<br>    object({<br>      slug = string<br>      public_ip = string<br>    })<br>  )</pre> | n/a | yes |
+| <a name="input_nodes"></a> [nodes](#input\_nodes) | Other nodes detail | <pre>list(<br>    object({<br>      slug      = string<br>      public_ip = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_password_token"></a> [password\_token](#input\_password\_token) | The trust token of the cluster | `string` | n/a | yes |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | The infrastructure provider | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region of your cluster | `string` | n/a | yes |
@@ -47,5 +45,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cluster_id"></a> [cluster\_id](#output\_cluster\_id) | n/a |
 <!-- END_TF_DOCS -->
