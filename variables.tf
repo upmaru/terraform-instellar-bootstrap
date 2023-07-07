@@ -1,14 +1,3 @@
-variable "host" {
-  type        = string
-  description = "Instellar host"
-  default     = "https://web.instellar.app"
-}
-
-variable "auth_token" {
-  type        = string
-  description = "Authentication token for instellar"
-}
-
 variable "provider_name" {
   type        = string
   description = "The infrastructure provider"
@@ -55,7 +44,7 @@ variable "region" {
 variable "bootstrap_node" {
   description = "The bootstrap node detail"
   type = object({
-    slug = string
+    slug      = string
     public_ip = string
   })
 }
@@ -64,7 +53,7 @@ variable "nodes" {
   description = "Other nodes detail"
   type = list(
     object({
-      slug = string
+      slug      = string
       public_ip = string
     })
   )
