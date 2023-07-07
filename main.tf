@@ -1,8 +1,3 @@
-provider "instellar" {
-  host       = var.host
-  auth_token = var.auth_token
-}
-
 resource "instellar_cluster" "this" {
   name           = var.cluster_name
   provider_name  = var.provider_name
@@ -18,18 +13,18 @@ resource "instellar_uplink" "this" {
 }
 
 resource "instellar_node" "bootstrap" {
-  slug      = var.bootstrap_node.slug
+  slug       = var.bootstrap_node.slug
   cluster_id = instellar_cluster.this.id
-  public_ip = var.bootstrap_node.public_ip
+  public_ip  = var.bootstrap_node.public_ip
 }
 
 resource "instellar_node" "nodes" {
   for_each = {
-    for index, node in var.nodes:
-      node.slug => node
+    for index, node in var.nodes :
+    node.slug => node
   }
 
-  slug = each.value.slug
+  slug       = each.value.slug
   cluster_id = instellar_cluster.this.id
-  public_ip = each.value.public_ip
+  public_ip  = each.value.public_ip
 }
