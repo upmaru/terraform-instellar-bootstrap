@@ -61,9 +61,10 @@ module "postgresql_service" {
   credential = {
     username = "postgres"
     password = "postgres"
-    database = "postgres"
+    resource = "postgres"
     host     = "localhost"
     port     = 5432
+    secure   = true
   }
 }
 
@@ -80,8 +81,9 @@ module "mysql_service" {
   credential = {
     username = "mysql"
     password = "somepass"
-    database = "exampledb"
+    resource = "exampledb"
     host     = "localhost"
     port     = 3306
+    secure   = false
   }
 }

@@ -4,7 +4,7 @@ terraform {
   required_providers {
     instellar = {
       source  = "upmaru/instellar"
-      version = "~> 0.5"
+      version = "~> 0.6"
     }
   }
 }
