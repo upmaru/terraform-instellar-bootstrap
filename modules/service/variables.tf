@@ -32,9 +32,10 @@ variable "credential" {
   type = object({
     username = string
     password = string
-    database = string
+    resource = string
     host     = string
     port     = number
+    secure   = bool
   })
   description = "The credential to use for the component"
 }

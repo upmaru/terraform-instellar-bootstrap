@@ -8,13 +8,13 @@ Terraform module for registering components into instellar
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.5 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | ~> 0.5 |
+| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | ~> 0.6 |
 
 ## Modules
 
@@ -32,7 +32,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_channels"></a> [channels](#input\_channels) | Distribution channels that can use this component | `list(string)` | n/a | yes |
 | <a name="input_cluster_ids"></a> [cluster\_ids](#input\_cluster\_ids) | The cluster ids to connect to the component | `list(string)` | n/a | yes |
-| <a name="input_credential"></a> [credential](#input\_credential) | The credential to use for the component | <pre>object({<br>    username = string<br>    password = string<br>    database = string<br>    host     = string<br>    port     = number<br>  })</pre> | n/a | yes |
+| <a name="input_credential"></a> [credential](#input\_credential) | The credential to use for the component | <pre>object({<br>    username = string<br>    password = string<br>    resource = string<br>    host     = string<br>    port     = number<br>    secure   = bool<br>  })</pre> | n/a | yes |
 | <a name="input_driver"></a> [driver](#input\_driver) | The driver to use | `string` | n/a | yes |
 | <a name="input_driver_version"></a> [driver\_version](#input\_driver\_version) | The driver version to use | `string` | n/a | yes |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | The infrastructure provider | `string` | n/a | yes |

@@ -9,8 +9,9 @@ resource "instellar_component" "this" {
   credential {
     username = var.credential.username
     password = var.credential.password
-    database = var.credential.database
+    resource = var.credential.resource
     host     = var.credential.host
     port     = var.credential.port
+    secure   = var.credential.secure
   }
 }
