@@ -22,3 +22,9 @@ variable "secret_key" {
   description = "The secret key of the storage"
   type        = string
 }
+
+variable "insterra_component_id" {
+  description = "The insterra component id of the storage"
+  type        = number
+  nullable    = true
+}

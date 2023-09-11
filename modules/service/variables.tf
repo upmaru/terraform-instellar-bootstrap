@@ -39,3 +39,9 @@ variable "credential" {
   })
   description = "The credential to use for the component"
 }
+
+variable "insterra_component_id" {
+  description = "The insterra component id of the storage"
+  type        = number
+  nullable    = true
+}

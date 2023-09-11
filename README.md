@@ -7,13 +7,13 @@ Terraform module for bootstrapping cluster on instellar.app
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.5 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.3.2 |
+| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.6.1 |
 
 ## Modules
 
@@ -36,6 +36,7 @@ No modules.
 | <a name="input_cluster_address"></a> [cluster\_address](#input\_cluster\_address) | Public facing IP of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_port"></a> [cluster\_port](#input\_cluster\_port) | Port of the cluster | `number` | `8443` | no |
+| <a name="input_insterra_component_id"></a> [insterra\_component\_id](#input\_insterra\_component\_id) | The insterra component id of the storage | `number` | n/a | yes |
 | <a name="input_nodes"></a> [nodes](#input\_nodes) | Other nodes detail | <pre>list(<br>    object({<br>      slug      = string<br>      public_ip = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_password_token"></a> [password\_token](#input\_password\_token) | The trust token of the cluster | `string` | n/a | yes |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | The infrastructure provider | `string` | n/a | yes |
