@@ -1,9 +1,10 @@
 resource "instellar_cluster" "this" {
-  name           = var.cluster_name
-  provider_name  = var.provider_name
-  region         = var.region
-  endpoint       = "${var.cluster_address}:${var.cluster_port}"
-  password_token = var.password_token
+  name                  = var.cluster_name
+  provider_name         = var.provider_name
+  region                = var.region
+  endpoint              = "${var.cluster_address}:${var.cluster_port}"
+  password_token        = var.password_token
+  insterra_component_id = var.insterra_component_id
 }
 
 resource "instellar_uplink" "this" {
