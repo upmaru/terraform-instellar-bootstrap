@@ -125,8 +125,4 @@ module "mysql_service" {
 }
 ```
 
-This example will setup your compute and add it to your instellar account. It will also setup uplink pro because the `uplink_database_url` was defined.
-
-If you choose to omit the `uplink_database_url` the `lite` version of uplink will be setup. Uplink `lite` is limited to single instance, while `pro` can scale to provide HA setup.
-
-You can also create database services and associate it to your cluster see the `postgresql_service` and `mysql_service` module as an example.
+This example will setup your compute and add it to your instellar account.
