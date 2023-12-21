@@ -1,7 +1,8 @@
+variable "instellar_host" {}
 variable "instellar_auth_token" {}
 
 provider "instellar" {
-  host       = "https://staging-web.instellar.app"
+  host       = var.instellar_host
   auth_token = var.instellar_auth_token
 }
 
@@ -18,16 +19,16 @@ module "storage" {
 module "compute" {
   source = "../.."
 
-  cluster_name    = "pizza"
+  cluster_name    = "pizza-123abc"
   cluster_address = "127.0.0.1"
   provider_name   = "aws"
   region          = "ap-southeast-1"
   password_token  = "sometoken"
 
   uplink_channel = "develop"
+  kit_slug       = "pro"
   # below value is optional if it's passed in uplink pro will be setup
   # if empty uplink lite will be used.
-  uplink_database_url = "postgresql://user:pass@localhost/some_db"
 
   depends_on = [module.storage]
 
@@ -57,6 +58,8 @@ module "postgresql_service" {
   driver_version = "15"
   cluster_ids    = [module.compute.cluster_id]
   channels       = ["develop", "master"]
+
+  certificate = "https://truststore.pki.rds.amazonaws.com/us-east-2/us-east-2-bundle.pem"
 
   credential = {
     username = "postgres"

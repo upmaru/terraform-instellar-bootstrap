@@ -40,9 +40,14 @@ variable "credential" {
   description = "The credential to use for the component"
 }
 
+variable "certificate" {
+  description = "Any certificate URL or PEM from the service"
+  type        = string
+  default     = null
+}
+
 variable "insterra_component_id" {
   description = "The insterra component id of the storage"
   type        = number
-  nullable    = true
   default     = null
 }
