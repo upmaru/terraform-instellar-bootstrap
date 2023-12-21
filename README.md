@@ -7,13 +7,13 @@ Terraform module for bootstrapping cluster on instellar.app
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.6 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.7 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.6.3 |
+| <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.7.0 |
 
 ## Modules
 
@@ -37,12 +37,12 @@ No modules.
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_port"></a> [cluster\_port](#input\_cluster\_port) | Port of the cluster | `number` | `8443` | no |
 | <a name="input_insterra_component_id"></a> [insterra\_component\_id](#input\_insterra\_component\_id) | The insterra component id of the storage | `number` | `null` | no |
+| <a name="input_kit_slug"></a> [kit\_slug](#input\_kit\_slug) | The slug of the kit to use. lite \| pro | `string` | `"pro"` | no |
 | <a name="input_nodes"></a> [nodes](#input\_nodes) | Other nodes detail | <pre>list(<br>    object({<br>      slug      = string<br>      public_ip = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_password_token"></a> [password\_token](#input\_password\_token) | The trust token of the cluster | `string` | n/a | yes |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | The infrastructure provider | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region of your cluster | `string` | n/a | yes |
 | <a name="input_uplink_channel"></a> [uplink\_channel](#input\_uplink\_channel) | Which distribution channel to use | `string` | `"master"` | no |
-| <a name="input_uplink_database_url"></a> [uplink\_database\_url](#input\_uplink\_database\_url) | Database to use for uplink pro | `string` | `null` | no |
 
 ## Outputs
 

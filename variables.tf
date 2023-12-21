@@ -30,10 +30,10 @@ variable "uplink_channel" {
   default     = "master"
 }
 
-variable "uplink_database_url" {
+variable "kit_slug" {
   type        = string
-  description = "Database to use for uplink pro"
-  default     = null
+  description = "The slug of the kit to use. lite | pro"
+  default     = "pro"
 }
 
 variable "region" {

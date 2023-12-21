@@ -9,8 +9,8 @@ resource "instellar_cluster" "this" {
 
 resource "instellar_uplink" "this" {
   channel_slug = var.uplink_channel
+  kit_slug     = var.kit_slug
   cluster_id   = instellar_cluster.this.id
-  database_url = var.uplink_database_url
 }
 
 resource "instellar_node" "bootstrap" {

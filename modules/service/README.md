@@ -30,6 +30,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_certificate"></a> [certificate](#input\_certificate) | Any certificate URL or PEM from the service | `string` | `null` | no |
 | <a name="input_channels"></a> [channels](#input\_channels) | Distribution channels that can use this component | `list(string)` | n/a | yes |
 | <a name="input_cluster_ids"></a> [cluster\_ids](#input\_cluster\_ids) | The cluster ids to connect to the component | `list(string)` | n/a | yes |
 | <a name="input_credential"></a> [credential](#input\_credential) | The credential to use for the component | <pre>object({<br>    username = string<br>    password = string<br>    resource = string<br>    host     = string<br>    port     = number<br>    secure   = bool<br>  })</pre> | n/a | yes |
