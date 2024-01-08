@@ -33,7 +33,7 @@ variable "uplink_channel" {
 variable "kit_slug" {
   type        = string
   description = "The slug of the kit to use. lite | pro"
-  default     = "pro"
+  default     = "lite"
 }
 
 variable "region" {
