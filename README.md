@@ -37,7 +37,7 @@ No modules.
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_port"></a> [cluster\_port](#input\_cluster\_port) | Port of the cluster | `number` | `8443` | no |
 | <a name="input_insterra_component_id"></a> [insterra\_component\_id](#input\_insterra\_component\_id) | The insterra component id of the storage | `number` | `null` | no |
-| <a name="input_kit_slug"></a> [kit\_slug](#input\_kit\_slug) | The slug of the kit to use. lite \| pro | `string` | `"pro"` | no |
+| <a name="input_kit_slug"></a> [kit\_slug](#input\_kit\_slug) | The slug of the kit to use. lite \| pro | `string` | `"lite"` | no |
 | <a name="input_nodes"></a> [nodes](#input\_nodes) | Other nodes detail | <pre>list(<br>    object({<br>      slug      = string<br>      public_ip = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_password_token"></a> [password\_token](#input\_password\_token) | The trust token of the cluster | `string` | n/a | yes |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | The infrastructure provider | `string` | n/a | yes |
