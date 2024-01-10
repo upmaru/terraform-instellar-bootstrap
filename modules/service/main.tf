@@ -2,8 +2,8 @@ resource "instellar_component" "this" {
   name                  = var.slug
   driver                = var.driver
   driver_version        = var.driver_version
-  cluster_ids           = var.cluster_ids
-  channels              = var.channels
+  cluster_ids           = sort(var.cluster_ids)
+  channels              = sort(var.channels)
   provider_name         = var.provider_name
   insterra_component_id = var.insterra_component_id
   credential {
