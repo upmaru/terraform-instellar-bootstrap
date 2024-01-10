@@ -57,7 +57,7 @@ module "postgresql_service" {
   driver         = "database/postgresql"
   driver_version = "15"
   cluster_ids    = [module.compute.cluster_id]
-  channels       = ["develop", "master"]
+  channels       = ["main", "develop", "master"]
 
   certificate = "https://truststore.pki.rds.amazonaws.com/us-east-2/us-east-2-bundle.pem"
 
@@ -79,7 +79,7 @@ module "mysql_service" {
   driver         = "database/mysql"
   driver_version = "5.7"
   cluster_ids    = [module.compute.cluster_id]
-  channels       = ["develop", "master"]
+  channels       = ["main", "develop", "master"]
 
   credential = {
     username = "mysql"
