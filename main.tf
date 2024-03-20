@@ -35,7 +35,7 @@ resource "time_sleep" "wait_30_seconds" {
 }
 
 data "instellar_uplink" "this" {
-  id = var.uplink_id
+  id = instellar_uplink.this.id
 
   depends_on = [time_sleep.wait_30_seconds]
 }
