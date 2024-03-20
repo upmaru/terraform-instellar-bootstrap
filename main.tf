@@ -29,3 +29,13 @@ resource "instellar_node" "nodes" {
   cluster_id = instellar_cluster.this.id
   public_ip  = each.value.public_ip
 }
+
+resource "time_sleep" "wait_30_seconds" {
+  create_duration = "30s"
+}
+
+data "instellar_uplink" "this" {
+  id = var.uplink_id
+
+  depends_on = [time_sleep.wait_30_seconds]
+}

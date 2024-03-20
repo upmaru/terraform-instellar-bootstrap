@@ -6,5 +6,10 @@ terraform {
       source  = "upmaru/instellar"
       version = "~> 0.7"
     }
+
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.11"
+    }
   }
 }
