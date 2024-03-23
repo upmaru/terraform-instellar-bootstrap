@@ -49,6 +49,14 @@ module "compute" {
   ]
 }
 
+module "balancer" {
+  source = "../../modules/balancer"
+
+  name       = "some-balancer"
+  address    = "some.address.com"
+  cluster_id = module.compute.cluster_id
+}
+
 module "postgresql_service" {
   source = "../../modules/service"
 
@@ -71,22 +79,22 @@ module "postgresql_service" {
   }
 }
 
-module "mysql_service" {
-  source = "../../modules/service"
+# module "mysql_service" {
+#   source = "../../modules/service"
 
-  slug           = "pizza-mysql"
-  provider_name  = "aws"
-  driver         = "database/mysql"
-  driver_version = "5.7"
-  cluster_ids    = [module.compute.cluster_id]
-  channels       = ["main", "develop", "master"]
+#   slug           = "pizza-mysql"
+#   provider_name  = "aws"
+#   driver         = "database/mysql"
+#   driver_version = "5.7"
+#   cluster_ids    = [module.compute.cluster_id]
+#   channels       = ["main", "develop", "master"]
 
-  credential = {
-    username = "mysql"
-    password = "somepass"
-    resource = "exampledb"
-    host     = "localhost"
-    port     = 3306
-    secure   = false
-  }
-}
+#   credential = {
+#     username = "mysql"
+#     password = "somepass"
+#     resource = "exampledb"
+#     host     = "localhost"
+#     port     = 3306
+#     secure   = false
+#   }
+# }
