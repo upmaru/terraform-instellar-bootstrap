@@ -8,7 +8,7 @@ Terraform module for registering components into instellar
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.6 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.8 |
 
 ## Providers
 
