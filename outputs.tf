@@ -1,3 +1,4 @@
 output "cluster_id" {
-  value = instellar_cluster.this.id
+  description = "The id of the cluster"
+  value       = instellar_cluster.this.id
 }
