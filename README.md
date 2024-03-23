@@ -7,7 +7,7 @@ Terraform module for bootstrapping cluster on instellar.app
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.7 |
+| <a name="requirement_instellar"></a> [instellar](#requirement\_instellar) | ~> 0.8 |
 
 ## Providers
 
