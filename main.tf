@@ -29,3 +29,11 @@ resource "instellar_node" "nodes" {
   cluster_id = instellar_cluster.this.id
   public_ip  = each.value.public_ip
 }
+
+resource "instellar_balancer" "this" {
+  count = var.balancer.enabled ? 1 : 0
+
+  name       = var.balancer.name
+  address    = var.balancer.address
+  cluster_id = instellar_cluster.this.id
+}

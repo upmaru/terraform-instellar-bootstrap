@@ -59,6 +59,15 @@ variable "nodes" {
   )
 }
 
+variable "balancer" {
+  description = "Whether the balancer is active"
+  type = object({
+    enabled = bool
+    name    = optional(string)
+    address = optional(string)
+  })
+}
+
 variable "insterra_component_id" {
   description = "The insterra component id of the storage"
   type        = number
