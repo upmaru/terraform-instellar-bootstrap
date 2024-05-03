@@ -65,7 +65,7 @@ variable "balancer" {
     enabled      = bool
     name         = optional(string)
     address      = optional(string)
-    dependencies = list(any)
+    dependencies = list(string)
   })
 }
 
