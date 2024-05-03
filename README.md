@@ -14,6 +14,7 @@ Terraform module for bootstrapping cluster on instellar.app
 | Name | Version |
 |------|---------|
 | <a name="provider_instellar"></a> [instellar](#provider\_instellar) | 0.8.1 |
+| <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
 
 ## Modules
 
@@ -28,12 +29,13 @@ No modules.
 | [instellar_node.bootstrap](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/node) | resource |
 | [instellar_node.nodes](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/node) | resource |
 | [instellar_uplink.this](https://registry.terraform.io/providers/upmaru/instellar/latest/docs/resources/uplink) | resource |
+| [terraform_data.balancer_dependencies](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_balancer"></a> [balancer](#input\_balancer) | Whether the balancer is active | <pre>object({<br>    enabled = bool<br>    name    = optional(string)<br>    address = optional(string)<br>  })</pre> | n/a | yes |
+| <a name="input_balancer"></a> [balancer](#input\_balancer) | Whether the balancer is active | <pre>object({<br>    enabled      = bool<br>    name         = optional(string)<br>    address      = optional(string)<br>    dependencies = list(string)<br>  })</pre> | n/a | yes |
 | <a name="input_bootstrap_node"></a> [bootstrap\_node](#input\_bootstrap\_node) | The bootstrap node detail | <pre>object({<br>    slug      = string<br>    public_ip = string<br>  })</pre> | n/a | yes |
 | <a name="input_cluster_address"></a> [cluster\_address](#input\_cluster\_address) | Public facing IP of the cluster | `string` | n/a | yes |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the cluster | `string` | n/a | yes |
