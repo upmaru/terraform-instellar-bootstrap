@@ -62,9 +62,10 @@ variable "nodes" {
 variable "balancer" {
   description = "Whether the balancer is active"
   type = object({
-    enabled = bool
-    name    = optional(string)
-    address = optional(string)
+    enabled      = bool
+    name         = optional(string)
+    address      = optional(string)
+    dependencies = list(string)
   })
 }
 

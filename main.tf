@@ -30,8 +30,16 @@ resource "instellar_node" "nodes" {
   public_ip  = each.value.public_ip
 }
 
+resource "terraform_data" "balancer_dependencies" {
+  input = var.balancer.dependencies
+}
+
 resource "instellar_balancer" "this" {
   count = var.balancer.enabled ? 1 : 0
+
+  depends_on = [
+    terraform_data.balancer_dependencies
+  ]
 
   name       = var.balancer.name
   address    = var.balancer.address
