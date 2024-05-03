@@ -33,6 +33,8 @@ resource "instellar_node" "nodes" {
 resource "instellar_balancer" "this" {
   count = var.balancer.enabled ? 1 : 0
 
+  depends_on = var.balancer.dependencies
+
   name       = var.balancer.name
   address    = var.balancer.address
   cluster_id = instellar_cluster.this.id
