@@ -67,6 +67,12 @@ variable "balancer" {
     address      = optional(string)
     dependencies = list(string)
   })
+  default = {
+    enabled      = false
+    name         = null
+    address      = null
+    dependencies = []
+  }
 }
 
 variable "insterra_component_id" {
