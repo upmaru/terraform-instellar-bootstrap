@@ -49,14 +49,6 @@ module "compute" {
   ]
 }
 
-module "balancer" {
-  source = "../../modules/balancer"
-
-  name       = "some-balancer"
-  address    = "some.address.com"
-  cluster_id = module.compute.cluster_id
-}
-
 module "postgresql_service" {
   source = "../../modules/service"
 
